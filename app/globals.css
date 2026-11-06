@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
@@ -16,7 +15,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  --font-sans: 'Outfit', sans-serif;
+  --font-sans: 'Quicksand', sans-serif;
   --color-brand-lime: #A3F858;
   --color-brand-navy: #171B46;
   --radius-lg: 1.25rem;
@@ -56,8 +55,12 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+.sonner-toast {
+  font-family: 'Quicksand', sans-serif;
 }
 
 a {
@@ -83,7 +86,7 @@ a {
 .hero-background {
   z-index: -2;
   object-fit: cover;
-  object-position: center 52%;
+  object-position: center 50%;
 }
 
 .hero-overlay {
@@ -91,8 +94,8 @@ a {
   z-index: -1;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(7, 14, 18, 0.72) 0%, rgba(8, 15, 19, 0.54) 49%, rgba(9, 17, 20, 0.42) 100%),
-    linear-gradient(180deg, rgba(9, 14, 18, 0.44) 0%, rgba(10, 16, 19, 0.06) 40%, rgba(8, 14, 17, 0.3) 100%);
+    linear-gradient(90deg, rgba(7, 14, 18, 0.42) 0%, rgba(8, 15, 19, 0.24) 49%, rgba(9, 17, 20, 0.14) 100%),
+    linear-gradient(180deg, rgba(9, 14, 18, 0.22) 0%, rgba(10, 16, 19, 0.02) 40%, rgba(8, 14, 17, 0.24) 100%);
 }
 
 .hero-header {
@@ -107,29 +110,17 @@ a {
 }
 
 .brand-mark {
-  width: 94px;
-  min-height: 42px;
+  width: 88px;
+  height: 42px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  line-height: 0.9;
+  align-items: center;
 }
 
-.brand-nomade {
-  color: var(--cyan);
-  font-size: 19px;
-  font-weight: 800;
-  letter-spacing: -0.08em;
-}
-
-.brand-hydrate {
-  align-self: flex-end;
-  margin-right: 2px;
-  color: var(--lime);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
+.brand-image {
+  display: block;
+  width: 88px;
+  height: 39px;
+  object-fit: contain;
 }
 
 .menu-mark {
@@ -197,15 +188,6 @@ a {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.bottle-logo {
-  position: absolute;
-  top: 62%;
-  left: 50%;
-  width: clamp(45px, 8vw, 58px);
-  height: auto;
-  transform: translate(-50%, -50%) rotate(-90deg);
 }
 
 .feature-tiles {
@@ -412,10 +394,10 @@ a {
 }
 
 .checkout-alert-symbol {
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
   color: #a36b00;
-  font-family: system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
-  font-size: 14px;
-  line-height: 1.2;
 }
 
 .checkout-alert-copy {

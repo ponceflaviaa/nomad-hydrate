@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { Dialog } from '@base-ui/react/dialog'
-import { X } from 'lucide-react'
+import { TriangleAlert, X } from 'lucide-react'
 import { toast } from 'sonner'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Badge } from '@/components/ui/badge'
@@ -47,7 +47,7 @@ function ProductSummary() {
     <section className="checkout-product" aria-label="Resumen de compra">
       <div className="checkout-thumbnail">
         <Image
-          src="/bottle-source.webp"
+          src="/bottle.webp"
           alt="Botella azul Nomade Hydrate"
           width={42}
           height={68}
@@ -135,7 +135,7 @@ export function CheckoutExperience() {
             </header>
 
             <Alert className="checkout-alert">
-              <span className="checkout-alert-symbol" aria-hidden="true">⚠️</span>
+              <TriangleAlert className="checkout-alert-symbol" aria-hidden="true" />
               <AlertDescription className="checkout-alert-copy">
                 Entorno de prueba ficticio para la materia Sitios Web (IGTP). No se procesarán cobros reales. No ingreses datos reales.
               </AlertDescription>

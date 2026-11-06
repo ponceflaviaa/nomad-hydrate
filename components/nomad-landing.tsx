@@ -32,8 +32,14 @@ const benefits = [
 function BrandMark() {
   return (
     <a className="brand-mark" href="#inicio" aria-label="Nomade hydrate, inicio">
-      <span className="brand-nomade">NOMADE</span>
-      <span className="brand-hydrate">hydrate</span>
+      <Image
+        className="brand-image"
+        src="/image.png"
+        alt="NOMADE hydrate"
+        width={88}
+        height={39}
+        priority
+      />
     </a>
   )
 }
@@ -43,7 +49,7 @@ function HeroSection() {
     <section className="hero-section" id="inicio" aria-labelledby="hero-title">
       <Image
         className="hero-background"
-        src="/bg-runner.webp"
+        src="/site-background.webp"
         alt=""
         fill
         priority
@@ -71,18 +77,11 @@ function HeroSection() {
         <Image
           className="hero-bottle"
           src="/bottle.webp"
-          alt="Botella deportiva Nomade azul con tapa blanca"
-          width={54}
-          height={185}
+          alt="Botella deportiva Nomade Hydrate azul con tapa pulverizadora"
+          width={286}
+          height={925}
           priority
           sizes="(max-width: 760px) 11vw, 78px"
-        />
-        <Image
-          className="bottle-logo"
-          src="/images/nomade-logo-cutout.png"
-          alt=""
-          width={86}
-          height={42}
         />
       </div>
 
