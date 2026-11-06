@@ -234,23 +234,31 @@ export function CheckoutExperience() {
         </Dialog.Portal>
       </Dialog.Root>
 
-      <div className="w-64 overflow-hidden relative mx-auto [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-  <p 
-    className="whitespace-nowrap text-xs italic text-white font-medium inline-block"
-    style={{
-      animation: 'marquee 7s linear infinite'
-    }}
-  >
-    Envío gratis en tu primer pedido
-  </p>
+     <div 
+        className="w-64 overflow-hidden relative mx-auto [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]" 
+        aria-label="Envío gratis en tu primer pedido"
+      >
+        <div 
+          className="whitespace-nowrap inline-block"
+          style={{
+            animation: 'marqueeText 7s linear infinite'
+          }}
+        >
+          <span className="text-xs italic text-white font-medium">
+            Envío gratis en tu primer pedido
+          </span>
+        </div>
 
-  <style jsx>{`
-    @keyframes marquee {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-  `}</style>
-</div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes marqueeText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+          }
+        ` }} />
+      </div>
+    </div>
+  )
+}
     
     </div>
   )
