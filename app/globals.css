@@ -158,7 +158,8 @@ a {
   -webkit-text-stroke: 0.3px rgba(107, 229, 245, 0.8);
 }
 
-.hero-copy p {
+.hero-copy p,
+.hero-copy h2 {
   max-width: 540px;
   margin: 18px 0 0;
   color: rgba(244, 243, 250, 0.94);
@@ -598,6 +599,20 @@ a {
   flex: 1;
 }
 
+/* MARQUEE ANIMATION FOR CHECKOUT EXPERIENCE */
+@keyframes marqueeSlide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-slide {
+  animation: marqueeSlide 7s linear infinite;
+}
+
 @media (min-width: 1200px) {
   .hero-copy {
     width: min(61%, 790px);
@@ -645,7 +660,8 @@ a {
     font-size: clamp(40px, 10.5vw, 54px);
   }
 
-  .hero-copy p {
+  .hero-copy p,
+  .hero-copy h2 {
     max-width: 440px;
     margin-top: 14px;
     font-size: 15px;
@@ -727,7 +743,8 @@ a {
     font-size: clamp(38px, 10.5vw, 44px);
   }
 
-  .hero-copy p {
+  .hero-copy p,
+  .hero-copy h2 {
     font-size: 14px;
   }
 
@@ -783,20 +800,8 @@ a {
     transform: none;
   }
 
-  .delivery-marquee-track {
-    animation: none;
+  .delivery-marquee-track,
+  .animate-marquee-slide {
+    animation: none !important;
   }
-
-  @keyframes marqueeSlide {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.animate-marquee-slide {
-  animation: marqueeSlide 7s linear infinite;
-}
 }
