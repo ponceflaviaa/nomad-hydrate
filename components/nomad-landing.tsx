@@ -1,155 +1,98 @@
 import Image from 'next/image'
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Droplets,
-  Hand,
-  Recycle,
-  Timer,
-  Truck,
-} from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
-const features = [
+const benefits = [
   {
     number: '01',
     title: 'Nutrición e hidratación garantizada.',
-    description: 'Permite llevar tu bebida isotónica',
-    Icon: Droplets,
+    description: 'Lleva tu bebida isotónica y mantén el ritmo durante cada recorrido.',
   },
   {
     number: '02',
     title: 'Eficiencia y ritmo de carrera.',
-    description: 'Sin tiempo perdido en las paradas de agua.',
-    Icon: Timer,
+    description: 'Hidrátate cuando lo necesitas, sin perder tiempo en las paradas de agua.',
   },
   {
     number: '03',
     title: 'Comodidad y técnica al beber.',
-    description: 'Sin derrames ni tragos de aire. Apertura y agarre fácil.',
-    Icon: Hand,
+    description: 'Agarre fácil y una apertura pensada para beber en movimiento.',
   },
   {
     number: '04',
     title: 'Sostenibilidad e higiene.',
-    description: 'Menos residuos y más control de higiene por manipulación',
-    Icon: Recycle,
+    description: 'Reutilizable, fácil de limpiar y lista para acompañarte muchos kilómetros.',
   },
 ]
 
 function BrandMark() {
   return (
-    <a className="brand-mark" href="#inicio" aria-label="Nomad hydrate, inicio">
-      <span className="brand-name">Nomad</span>
-      <span className="brand-subtitle">hydrate</span>
+    <a className="brand-mark" href="#inicio" aria-label="Nomade hydrate, inicio">
+      <span className="brand-word">NOMADE</span>
+      <span className="brand-subword">hydrate</span>
     </a>
-  )
-}
-
-function SiteHeader() {
-  return (
-    <header className="site-header">
-      <BrandMark />
-      <a className="header-link" href="#beneficios">
-        Hecha para moverte <ArrowUpRight aria-hidden="true" />
-      </a>
-    </header>
   )
 }
 
 function HeroSection() {
   return (
     <section className="hero-section" id="inicio" aria-labelledby="hero-title">
+      <Image
+        className="hero-background"
+        src="/images/nomade-runners.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+      />
+      <div className="hero-overlay" aria-hidden="true" />
+
+      <header className="hero-header">
+        <BrandMark />
+      </header>
+
       <div className="hero-copy">
-        <p className="eyebrow"><span /> Hidratación en movimiento</p>
         <h1 id="hero-title">
-          La botella que te da <span>fluidez, confort y libertad.</span>
+          La botella que te<br />
+          da fluidez, confort<br />
+          y libertad.
         </h1>
-        <p className="hero-description">
-          Tu ritmo, tu camino, tu hidratación. Todo lo que necesitas para seguir adelante con ligereza.
-        </p>
-        <div className="hero-actions">
-          <a className="primary-button" href="#beneficios">
-            Elegir mi botella <ArrowUpRight aria-hidden="true" />
-          </a>
-          <a className="scroll-link" href="#beneficios">
-            Descubre Nomad <ArrowDown aria-hidden="true" />
-          </a>
-        </div>
-        <div className="hero-proof">
-          <div className="proof-icon"><Droplets aria-hidden="true" /></div>
-          <div>
-            <strong>Hidratación que sigue tu ritmo</strong>
-            <span>Diseñada para cada kilómetro</span>
-          </div>
-        </div>
       </div>
 
-      <div className="hero-visual-wrap">
-        <div className="hero-orbit hero-orbit-one" aria-hidden="true" />
-        <div className="hero-orbit hero-orbit-two" aria-hidden="true" />
-        <div className="hero-visual">
-          <div className="visual-topline">
-            <span>Nomad / 001</span>
-            <span className="visual-dot" aria-hidden="true" />
-          </div>
-          <div className="product-image">
-            <Image
-              src="/placeholder.svg"
-              alt="Espacio para fotografía de la botella Nomad hydrate"
-              fill
-              priority
-              sizes="(max-width: 760px) 90vw, 44vw"
-            />
-            <span className="image-label">Tu próxima compañera de ruta</span>
-          </div>
-          <div className="visual-caption">
-            <span>HIDRÁTATE. MUÉVETE. REPITE.</span>
-            <span className="caption-mark">N.</span>
-          </div>
-        </div>
-        <div className="floating-note">
-          <span className="floating-icon"><Droplets aria-hidden="true" /></span>
-          <span>Hecha para<br /><strong>llegar más lejos</strong></span>
-        </div>
-        <div className="shipping-note">
-          <Truck aria-hidden="true" />
-          <span>Envío gratis en tu primer pedido</span>
-        </div>
-      </div>
+      <Image
+        className="hero-bottle"
+        src="/images/nomade-bottle.png"
+        alt="Botella deportiva Nomade azul con tapa blanca"
+        width={768}
+        height={1536}
+        priority
+        sizes="(max-width: 760px) 26vw, 250px"
+      />
+
+      <ul className="feature-tiles" aria-label="Beneficios de la botella Nomade">
+        {benefits.map((benefit) => (
+          <li className="feature-tile" key={benefit.number}>
+            <span className="feature-tile-shape" aria-hidden="true" />
+            <span className="tile-copy">{benefit.title}</span>
+            <span className="sr-only">{benefit.description}</span>
+          </li>
+        ))}
+      </ul>
+
+      <a className="promo-tile" href="#beneficios">
+        <span className="promo-copy">Más</span>
+        <ArrowUpRight aria-hidden="true" />
+      </a>
     </section>
   )
 }
 
-function FeatureCard({ feature }: { feature: (typeof features)[number] }) {
-  const { Icon } = feature
-
+function BenefitsSection() {
   return (
-    <article className="feature-card">
-      <div className="feature-card-top">
-        <div className="feature-icon"><Icon aria-hidden="true" /></div>
-        <span className="feature-number">{feature.number}</span>
-      </div>
-      <h3>{feature.number.replace(/^0/, '')}. {feature.title}</h3>
-      <p>{feature.description}</p>
-      <span className="card-accent" aria-hidden="true" />
-    </article>
-  )
-}
-
-function FeaturesSection() {
-  return (
-    <section className="features-section" id="beneficios" aria-labelledby="features-title">
-      <div className="section-heading">
-        <div>
-          <p className="eyebrow"><span /> Todo fluye mejor</p>
-          <h2 id="features-title">Más camino.<br /><span>Menos interrupciones.</span></h2>
-        </div>
-        <p className="section-description">
-          Pequeños detalles que hacen una gran diferencia cuando estás en movimiento.
-        </p>
-      </div>
-      <div className="features-grid">
-        {features.map((feature) => <FeatureCard key={feature.number} feature={feature} />)}
+    <section className="benefits-section" id="beneficios" aria-labelledby="benefits-title">
+      <div className="benefits-heading">
+        <p className="section-kicker">Nomade hydrate</p>
+        <h2 id="benefits-title">Tu ritmo no se detiene.</h2>
+        <p>Una botella pensada para que hidratarte sea parte natural del camino.</p>
       </div>
     </section>
   )
@@ -158,16 +101,8 @@ function FeaturesSection() {
 export function NomadLanding() {
   return (
     <main className="landing-page">
-      <div className="page-shell">
-        <SiteHeader />
-        <HeroSection />
-      </div>
-      <FeaturesSection />
-      <footer className="site-footer">
-        <BrandMark />
-        <span>Fluye a tu manera.</span>
-        <span>© Nomad hydrate</span>
-      </footer>
+      <HeroSection />
+      <BenefitsSection />
     </main>
   )
 }

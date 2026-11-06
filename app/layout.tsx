@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Nomad hydrate | Fluye a tu manera',
-  description: 'La botella que te da fluidez, confort y libertad. Hidratación en movimiento para seguir tu ritmo.',
+  title: 'NOMADE hydrate | La botella que te da libertad',
+  description: 'Conoce NOMADE hydrate, la botella deportiva azul pensada para acompañar tu ritmo de carrera.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#F4F3FA',
+  themeColor: '#171d22',
 }
 
 export default function RootLayout({
