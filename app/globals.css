@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
@@ -93,34 +93,42 @@ a {
 
 .hero-header {
   position: absolute;
-  top: 20px;
+  top: 14px;
   left: 3.8%;
+  right: 3.8%;
   z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .brand-mark {
-  display: inline-flex;
+  display: block;
+  width: 86px;
+  height: 42px;
+}
+
+.brand-image {
+  display: block;
+  width: 86px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.menu-mark {
+  width: 17px;
+  height: 12px;
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  line-height: 0.84;
+  justify-content: space-between;
+  margin-top: 0;
 }
 
-.brand-word {
-  color: #55e4ef;
-  font-family: 'Audiowide', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0.015em;
-}
-
-.brand-subword {
-  align-self: flex-end;
-  margin-top: 3px;
-  padding-right: 1px;
-  color: #fff;
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: -0.015em;
+.menu-mark i {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: #fff;
 }
 
 .hero-copy {
@@ -142,22 +150,35 @@ a {
   -webkit-text-stroke: 0.3px rgba(107, 229, 245, 0.8);
 }
 
-.hero-bottle {
+.hero-product {
   position: absolute;
   z-index: 2;
-  right: 3.5%;
-  bottom: clamp(42px, 12vh, 116px);
-  width: clamp(130px, 26vw, 320px);
-  height: auto;
-  object-fit: contain;
+  right: 11.2%;
+  bottom: clamp(84px, 24vh, 145px);
+  width: clamp(54px, 10.8vw, 78px);
   transform-origin: center bottom;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.28));
   transition: transform 320ms cubic-bezier(0.2, 0.75, 0.25, 1), filter 320ms ease;
 }
 
-.hero-bottle:hover {
+.hero-product:hover {
   transform: scale(1.08);
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.4));
+}
+
+.hero-bottle {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.bottle-logo {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  width: clamp(45px, 8vw, 58px);
+  height: auto;
+  transform: translate(-50%, -50%) rotate(-90deg);
 }
 
 .feature-tiles {
@@ -167,7 +188,7 @@ a {
   left: 3.8%;
   display: flex;
   align-items: flex-end;
-  gap: clamp(8px, 2.4vw, 16px);
+  gap: clamp(12px, 3.6vw, 22px);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -175,13 +196,15 @@ a {
 
 .feature-tile {
   position: relative;
-  width: clamp(60px, 14.4vw, 112px);
-  height: clamp(76px, 17vw, 110px);
+  width: clamp(60px, 13vw, 88px);
+  height: clamp(66px, 13.2vw, 96px);
   flex: 0 0 auto;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 0 5px 8px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+  padding: 12px 4px 4px;
   border-radius: 7px;
   background: var(--aqua);
   box-shadow: 0 4px 14px rgba(7, 25, 32, 0.16);
@@ -194,50 +217,60 @@ a {
 }
 
 .feature-tile:hover {
-  z-index: 2;
+  z-index: 4;
   transform: translateY(-5px) scale(1.045);
   background: #b6f2f8;
   box-shadow: 0 12px 24px rgba(7, 25, 32, 0.24);
 }
 
-.tile-copy {
-  position: relative;
-  z-index: 1;
-  color: #165761;
-  font-size: clamp(7px, 1.8vw, 12px);
-  font-weight: 700;
-  line-height: 1.08;
+.feature-icon-wrap {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--cyan);
+  color: #0a5863;
+  transform: translateX(-50%);
+}
+
+.feature-title {
+  display: block;
+  color: #102e34;
+  font-size: clamp(7px, 1.6vw, 10px);
+  font-weight: 800;
+  line-height: 1.02;
   text-wrap: balance;
 }
 
-.feature-tile-shape {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: linear-gradient(90deg, #30c7d5 0 50%, #10adc0 50% 100%);
-  transform: translateX(-50%);
+.feature-description {
+  display: block;
+  color: #214e55;
+  font-size: clamp(5px, 1.15vw, 7px);
+  font-weight: 500;
+  line-height: 1.06;
+  text-wrap: balance;
 }
 
 .promo-tile {
   position: absolute;
-  right: 5.2%;
-  bottom: 7%;
+  right: 4%;
+  bottom: 8%;
   z-index: 4;
-  width: clamp(92px, 20vw, 172px);
-  height: clamp(53px, 11vw, 68px);
+  width: clamp(110px, 22vw, 190px);
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
   padding: 0 10px;
   border: 0;
-  border-radius: 7px;
+  border-radius: 10px;
   background: #48b6c5;
   color: #fff;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.01em;
   box-shadow: 0 5px 18px rgba(5, 28, 35, 0.18);
@@ -251,12 +284,6 @@ a {
 
 .promo-copy {
   white-space: nowrap;
-}
-
-.promo-tile svg {
-  width: 14px;
-  height: 14px;
-  flex: 0 0 auto;
 }
 
 .benefits-section {
@@ -306,10 +333,6 @@ a {
     top: 19px;
   }
 
-  .brand-word {
-    font-size: 16px;
-  }
-
   .hero-copy {
     top: clamp(88px, 28vh, 215px);
     width: 74%;
@@ -319,28 +342,29 @@ a {
     font-size: clamp(34px, 5.2vw, 46px);
   }
 
-  .hero-bottle {
-    right: 2%;
-    width: clamp(130px, 26vw, 190px);
+  .hero-product {
+    right: 11.2%;
+    bottom: clamp(84px, 24vh, 145px);
+    width: clamp(54px, 10.8vw, 78px);
   }
 
   .feature-tiles {
     bottom: 12px;
-    gap: clamp(8px, 2.4vw, 16px);
+    gap: clamp(12px, 3.6vw, 22px);
   }
 
   .feature-tile {
-    width: clamp(60px, 14.4vw, 88px);
-    height: clamp(76px, 17vw, 100px);
+    width: clamp(60px, 13vw, 88px);
+    height: clamp(66px, 13.2vw, 96px);
   }
 
   .promo-tile {
-    right: 5.2%;
-    bottom: 7%;
-    width: clamp(92px, 20vw, 130px);
-    height: 53px;
+    right: 4%;
+    bottom: 8%;
+    width: clamp(110px, 22vw, 130px);
+    height: 44px;
     padding: 0 8px;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .benefits-section {
@@ -359,37 +383,38 @@ a {
     font-size: clamp(32px, 8.5vw, 36px);
   }
 
-  .hero-bottle {
-    right: 1%;
-    bottom: 17%;
-    width: 34vw;
+  .hero-product {
+    right: 11.2%;
+    bottom: clamp(84px, 24vh, 145px);
+    width: 54px;
   }
 
   .feature-tiles {
     left: 3.8%;
-    gap: clamp(8px, 2vw, 11px);
+    gap: clamp(7px, 2vw, 10px);
   }
 
   .feature-tile {
-    width: clamp(47px, 12.9vw, 54px);
+    width: clamp(43px, 12vw, 50px);
+    height: 66px;
     padding-right: 3px;
     padding-left: 3px;
   }
 
-  .tile-copy {
-    font-size: 7px;
+  .feature-title {
+    font-size: 6.5px;
+  }
+
+  .feature-description {
+    font-size: 4.8px;
   }
 
   .promo-tile {
     right: 4%;
-    width: 91px;
+    width: clamp(100px, 28vw, 112px);
+    height: 42px;
     padding: 0 5px;
-    font-size: 9px;
-  }
-
-  .promo-tile svg {
-    width: 12px;
-    height: 12px;
+    font-size: 10px;
   }
 }
 
@@ -407,7 +432,7 @@ a {
   }
 
   .feature-tile:hover,
-  .hero-bottle:hover {
+  .hero-product:hover {
     transform: none;
   }
 }

@@ -1,34 +1,44 @@
 import Image from 'next/image'
-import { ArrowUpRight } from 'lucide-react'
+import { Clock3, Droplet, Leaf, PersonStanding } from 'lucide-react'
 
 const benefits = [
   {
     number: '01',
+    icon: PersonStanding,
     title: 'Nutrición e hidratación garantizada.',
-    description: 'Lleva tu bebida isotónica y mantén el ritmo durante cada recorrido.',
+    description: 'Lleva tu bebida isotónica y mantén el ritmo en cada recorrido.',
   },
   {
     number: '02',
+    icon: Clock3,
     title: 'Eficiencia y ritmo de carrera.',
-    description: 'Hidrátate cuando lo necesitas, sin perder tiempo en las paradas de agua.',
+    description: 'Agua a mano, sin perder tiempo en las paradas.',
   },
   {
     number: '03',
+    icon: Droplet,
     title: 'Comodidad y técnica al beber.',
-    description: 'Agarre fácil y una apertura pensada para beber en movimiento.',
+    description: 'Agarre fácil y apertura pensada para beber en movimiento.',
   },
   {
     number: '04',
+    icon: Leaf,
     title: 'Sostenibilidad e higiene.',
-    description: 'Reutilizable, fácil de limpiar y lista para acompañarte muchos kilómetros.',
+    description: 'Reutilizable, práctica y fácil de limpiar.',
   },
 ]
 
 function BrandMark() {
   return (
     <a className="brand-mark" href="#inicio" aria-label="Nomade hydrate, inicio">
-      <span className="brand-word">NOMADE</span>
-      <span className="brand-subword">hydrate</span>
+      <Image
+        className="brand-image"
+        src="/images/nomade-logo-cutout.png"
+        alt=""
+        width={86}
+        height={42}
+        priority
+      />
     </a>
   )
 }
@@ -48,6 +58,11 @@ function HeroSection() {
 
       <header className="hero-header">
         <BrandMark />
+        <span className="menu-mark" aria-hidden="true">
+          <i />
+          <i />
+          <i />
+        </span>
       </header>
 
       <div className="hero-copy">
@@ -58,29 +73,43 @@ function HeroSection() {
         </h1>
       </div>
 
-      <Image
-        className="hero-bottle"
-        src="/images/nomade-bottle.png"
-        alt="Botella deportiva Nomade azul con tapa blanca"
-        width={768}
-        height={1536}
-        priority
-        sizes="(max-width: 760px) 26vw, 250px"
-      />
+      <div className="hero-product">
+        <Image
+          className="hero-bottle"
+          src="/images/nomade-bottle-cutout.png"
+          alt="Botella deportiva Nomade azul con tapa blanca"
+          width={54}
+          height={185}
+          priority
+          sizes="(max-width: 760px) 11vw, 78px"
+        />
+        <Image
+          className="bottle-logo"
+          src="/images/nomade-logo-cutout.png"
+          alt=""
+          width={86}
+          height={42}
+        />
+      </div>
 
       <ul className="feature-tiles" aria-label="Beneficios de la botella Nomade">
-        {benefits.map((benefit) => (
-          <li className="feature-tile" key={benefit.number}>
-            <span className="feature-tile-shape" aria-hidden="true" />
-            <span className="tile-copy">{benefit.title}</span>
-            <span className="sr-only">{benefit.description}</span>
-          </li>
-        ))}
+        {benefits.map((benefit) => {
+          const Icon = benefit.icon
+
+          return (
+            <li className="feature-tile" key={benefit.number}>
+              <span className="feature-icon-wrap" aria-hidden="true">
+                <Icon size={14} strokeWidth={2.5} />
+              </span>
+              <span className="feature-title">{benefit.title}</span>
+              <span className="feature-description">{benefit.description}</span>
+            </li>
+          )
+        })}
       </ul>
 
       <a className="promo-tile" href="#beneficios">
-        <span className="promo-copy">Más</span>
-        <ArrowUpRight aria-hidden="true" />
+        <span className="promo-copy">Elegir mi botella</span>
       </a>
     </section>
   )
