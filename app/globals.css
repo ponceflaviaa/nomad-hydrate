@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Outfit:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
@@ -107,9 +107,10 @@ a {
 
 .brand-word {
   color: #55e4ef;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.035em;
+  font-family: 'Audiowide', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.015em;
 }
 
 .brand-subword {
@@ -149,7 +150,14 @@ a {
   width: clamp(130px, 26vw, 320px);
   height: auto;
   object-fit: contain;
+  transform-origin: center bottom;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.28));
+  transition: transform 320ms cubic-bezier(0.2, 0.75, 0.25, 1), filter 320ms ease;
+}
+
+.hero-bottle:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.4));
 }
 
 .feature-tiles {
@@ -178,6 +186,18 @@ a {
   background: var(--aqua);
   box-shadow: 0 4px 14px rgba(7, 25, 32, 0.16);
   text-align: center;
+  transform-origin: center bottom;
+  transition:
+    transform 240ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    box-shadow 240ms ease,
+    background-color 240ms ease;
+}
+
+.feature-tile:hover {
+  z-index: 2;
+  transform: translateY(-5px) scale(1.045);
+  background: #b6f2f8;
+  box-shadow: 0 12px 24px rgba(7, 25, 32, 0.24);
 }
 
 .tile-copy {
@@ -287,7 +307,7 @@ a {
   }
 
   .brand-word {
-    font-size: 19px;
+    font-size: 16px;
   }
 
   .hero-copy {
@@ -384,5 +404,10 @@ a {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  .feature-tile:hover,
+  .hero-bottle:hover {
+    transform: none;
   }
 }
