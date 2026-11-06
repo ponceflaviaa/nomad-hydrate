@@ -90,7 +90,6 @@ export function CheckoutExperience() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    // This fictional checkout validates locally and never sends or stores card details.
     if (payment.cardNumber.replace(/\D/g, '').length !== 16) return
 
     setPayment(emptyPaymentDetails)
@@ -234,8 +233,7 @@ export function CheckoutExperience() {
         </Dialog.Portal>
       </Dialog.Root>
 
-     
-     <div 
+      <div 
         className="w-64 overflow-hidden relative mx-auto [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]" 
         aria-label="Envío gratis en tu primer pedido"
       >
@@ -245,7 +243,9 @@ export function CheckoutExperience() {
           </span>
         </div>
       </div>
-
+    </div>
+  )
+}
       
   )
 }
