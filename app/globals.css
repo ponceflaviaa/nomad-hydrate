@@ -786,4 +786,17 @@ a {
   .delivery-marquee-track {
     animation: none;
   }
+
+  @keyframes marqueeSlide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-slide {
+  animation: marqueeSlide 7s linear infinite;
+}
 }
