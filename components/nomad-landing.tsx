@@ -70,7 +70,7 @@ function HeroSection() {
         <h1 id="hero-title">
           Mantené tu<br /> movimiento
         </h1>
-        <p>Con la botella que te da fluidez, confort y libertad.</p>
+        <h2>Con la botella que te da fluidez, confort y libertad.</h2>
       </div>
 
       <div className="hero-product">
