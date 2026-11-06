@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Clock3, Droplet, Leaf, PersonStanding } from 'lucide-react'
+import { CheckoutExperience } from '@/components/checkout-experience'
 
 const benefits = [
   {
@@ -31,14 +32,8 @@ const benefits = [
 function BrandMark() {
   return (
     <a className="brand-mark" href="#inicio" aria-label="Nomade hydrate, inicio">
-      <Image
-        className="brand-image"
-        src="/images/nomade-logo-cutout.png"
-        alt=""
-        width={86}
-        height={42}
-        priority
-      />
+      <span className="brand-nomade">NOMADE</span>
+      <span className="brand-hydrate">hydrate</span>
     </a>
   )
 }
@@ -48,7 +43,7 @@ function HeroSection() {
     <section className="hero-section" id="inicio" aria-labelledby="hero-title">
       <Image
         className="hero-background"
-        src="/images/nomade-runners.png"
+        src="/bg-runner.webp"
         alt=""
         fill
         priority
@@ -67,16 +62,15 @@ function HeroSection() {
 
       <div className="hero-copy">
         <h1 id="hero-title">
-          La botella que te<br />
-          da fluidez, confort<br />
-          y libertad.
+          Mantené tu<br /> movimiento
         </h1>
+        <p>Con la botella que te da fluidez, confort y libertad.</p>
       </div>
 
       <div className="hero-product">
         <Image
           className="hero-bottle"
-          src="/images/nomade-bottle-cutout.png"
+          src="/bottle.webp"
           alt="Botella deportiva Nomade azul con tapa blanca"
           width={54}
           height={185}
@@ -108,21 +102,7 @@ function HeroSection() {
         })}
       </ul>
 
-      <a className="promo-tile" href="#beneficios">
-        <span className="promo-copy">Elegir mi botella</span>
-      </a>
-    </section>
-  )
-}
-
-function BenefitsSection() {
-  return (
-    <section className="benefits-section" id="beneficios" aria-labelledby="benefits-title">
-      <div className="benefits-heading">
-        <p className="section-kicker">Nomade hydrate</p>
-        <h2 id="benefits-title">Tu ritmo no se detiene.</h2>
-        <p>Una botella pensada para que hidratarte sea parte natural del camino.</p>
-      </div>
+      <CheckoutExperience />
     </section>
   )
 }
@@ -131,7 +111,6 @@ export function NomadLanding() {
   return (
     <main className="landing-page">
       <HeroSection />
-      <BenefitsSection />
     </main>
   )
 }

@@ -1,10 +1,11 @@
 import { Analytics } from '@vercel/analytics/next'
+import { Toaster } from 'sonner'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'NOMADE hydrate | La botella que te da libertad',
-  description: 'Conoce NOMADE hydrate, la botella deportiva azul pensada para acompañar tu ritmo de carrera.',
+  title: 'NOMADE hydrate | Mantené tu movimiento',
+  description: 'La botella deportiva que te da fluidez, confort y libertad para acompañar tu movimiento.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#171d22',
+  themeColor: '#171B46',
 }
 
 export default function RootLayout({
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="es">
       <body className="antialiased">
         {children}
+        <Toaster position="bottom-center" theme="light" richColors />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
