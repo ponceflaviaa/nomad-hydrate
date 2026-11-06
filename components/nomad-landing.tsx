@@ -1,31 +1,31 @@
 import Image from 'next/image'
-import { Clock3, Droplet, Leaf, PersonStanding } from 'lucide-react'
+import { Clock3, Droplet, Footprints, Leaf } from 'lucide-react'
 import { CheckoutExperience } from '@/components/checkout-experience'
 
 const benefits = [
   {
     number: '01',
-    icon: PersonStanding,
-    title: 'Nutrición e hidratación garantizada.',
-    description: 'Lleva tu bebida isotónica y mantén el ritmo en cada recorrido.',
+    icon: Footprints,
+    title: 'Nutrición e hidratación garantizada',
+    description: 'Permite llevar bebida isotónica',
   },
   {
     number: '02',
     icon: Clock3,
-    title: 'Eficiencia y ritmo de carrera.',
-    description: 'Agua a mano, sin perder tiempo en las paradas.',
+    title: 'Eficiencia y ritmo de carrera',
+    description: 'Sin tiempo perdido en las paradas de agua',
   },
   {
     number: '03',
     icon: Droplet,
-    title: 'Comodidad y técnica al beber.',
-    description: 'Agarre fácil y apertura pensada para beber en movimiento.',
+    title: 'Comodidad y técnica al beber',
+    description: 'sin derrames sin tragos de aire. Apertura y agarre fácil',
   },
   {
     number: '04',
     icon: Leaf,
-    title: 'Sostenibilidad e higiene.',
-    description: 'Reutilizable, práctica y fácil de limpiar.',
+    title: 'Sostenibilidad e higiene',
+    description: 'menos residuos más control de higiene por manipulación',
   },
 ]
 
@@ -81,7 +81,7 @@ function HeroSection() {
           width={286}
           height={925}
           priority
-          sizes="(max-width: 760px) 11vw, 78px"
+          sizes="(max-width: 680px) 32vw, 18vw"
         />
       </div>
 
@@ -92,7 +92,7 @@ function HeroSection() {
           return (
             <li className="feature-tile" key={benefit.number}>
               <span className="feature-icon-wrap" aria-hidden="true">
-                <Icon size={14} strokeWidth={2.5} />
+                <Icon size={16} strokeWidth={2.5} />
               </span>
               <span className="feature-title">{benefit.title}</span>
               <span className="feature-description">{benefit.description}</span>

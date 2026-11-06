@@ -141,28 +141,28 @@ a {
 
 .hero-copy {
   position: absolute;
-  top: clamp(88px, 28vh, 255px);
-  left: 3.8%;
+  top: clamp(112px, 23vh, 250px);
+  left: 4.5%;
   z-index: 2;
-  width: min(72%, 730px);
+  width: min(68%, 790px);
 }
 
 .hero-copy h1 {
   margin: 0;
   color: #fff;
-  font-size: clamp(34px, 5.2vw, 70px);
-  font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 0.99;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.28), 0 0 1px rgba(80, 225, 244, 0.78);
+  font-size: clamp(48px, 6.8vw, 96px);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.3), 0 0 1px rgba(80, 225, 244, 0.78);
   -webkit-text-stroke: 0.3px rgba(107, 229, 245, 0.8);
 }
 
 .hero-copy p {
-  max-width: 520px;
-  margin: 14px 0 0;
-  color: rgba(244, 243, 250, 0.92);
-  font-size: clamp(14px, 1.45vw, 18px);
+  max-width: 540px;
+  margin: 18px 0 0;
+  color: rgba(244, 243, 250, 0.94);
+  font-size: clamp(16px, 1.4vw, 20px);
   font-weight: 500;
   line-height: 1.45;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.36);
@@ -171,11 +171,11 @@ a {
 .hero-product {
   position: absolute;
   z-index: 2;
-  right: 11.2%;
-  bottom: clamp(84px, 24vh, 145px);
-  width: clamp(54px, 10.8vw, 78px);
+  right: 12%;
+  bottom: clamp(150px, 24vh, 220px);
+  width: clamp(76px, 18vh, 152px);
   transform-origin: center bottom;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.28));
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.32));
   transition: transform 320ms cubic-bezier(0.2, 0.75, 0.25, 1), filter 320ms ease;
 }
 
@@ -193,11 +193,13 @@ a {
 .feature-tiles {
   position: absolute;
   z-index: 3;
-  bottom: 12px;
-  left: 3.8%;
-  display: flex;
-  align-items: flex-end;
-  gap: clamp(12px, 3.6vw, 22px);
+  bottom: clamp(22px, 4vh, 42px);
+  left: 4.5%;
+  display: grid;
+  width: min(64vw, 820px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(9px, 1vw, 16px);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -205,24 +207,23 @@ a {
 
 .feature-tile {
   position: relative;
-  width: clamp(60px, 13vw, 88px);
-  height: clamp(66px, 13.2vw, 96px);
-  flex: 0 0 auto;
   display: flex;
+  min-width: 0;
+  min-height: 128px;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  gap: 2px;
-  padding: 12px 4px 4px;
-  border-radius: 7px;
-  background: var(--aqua);
-  box-shadow: 0 4px 14px rgba(7, 25, 32, 0.16);
+  justify-content: flex-start;
+  gap: 7px;
+  padding: 22px 12px 12px;
+  border-radius: 16px;
+  background: rgba(163, 237, 246, 0.96);
+  box-shadow: 0 6px 18px rgba(7, 25, 32, 0.2);
   text-align: center;
   transform-origin: center bottom;
   transition:
-    transform 240ms cubic-bezier(0.2, 0.75, 0.25, 1),
-    box-shadow 240ms ease,
-    background-color 240ms ease;
+    transform 300ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    box-shadow 300ms ease,
+    background-color 300ms ease;
 }
 
 .feature-tile:hover {
@@ -234,12 +235,13 @@ a {
 
 .feature-icon-wrap {
   position: absolute;
-  top: -13px;
+  top: -16px;
   left: 50%;
-  width: 26px;
-  height: 26px;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
+  border: 2px solid rgba(226, 252, 255, 0.95);
   border-radius: 50%;
   background: var(--cyan);
   color: #0a5863;
@@ -249,51 +251,52 @@ a {
 .feature-title {
   display: block;
   color: #102e34;
-  font-size: clamp(7px, 1.6vw, 10px);
+  font-size: clamp(11px, 1vw, 14px);
   font-weight: 800;
-  line-height: 1.02;
+  line-height: 1.15;
   text-wrap: balance;
 }
 
 .feature-description {
   display: block;
   color: #214e55;
-  font-size: clamp(5px, 1.15vw, 7px);
-  font-weight: 500;
-  line-height: 1.06;
-  text-wrap: balance;
+  font-size: clamp(9px, 0.85vw, 12px);
+  font-weight: 600;
+  line-height: 1.22;
+  text-wrap: pretty;
 }
 
 .hero-cta-cluster {
   position: absolute;
-  right: 4%;
-  bottom: 3.6%;
+  right: 4.5%;
+  bottom: clamp(26px, 4.8vh, 46px);
   z-index: 4;
-  width: clamp(110px, 22vw, 190px);
+  width: clamp(178px, 22vh, 250px);
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 8px;
+  gap: 10px;
 }
 
 .promo-tile {
   width: 100%;
-  min-height: 44px;
-  padding: 0 12px;
-  font-size: 12px;
+  min-height: clamp(52px, 7vh, 66px);
+  padding: 0 16px;
+  font-size: clamp(14px, 1.15vw, 16px);
   letter-spacing: 0.01em;
-  box-shadow: 0 5px 18px rgba(5, 28, 35, 0.18);
+  box-shadow: 0 5px 18px rgba(5, 28, 35, 0.24);
 }
 
 .delivery-marquee {
-  height: 18px;
+  height: 20px;
   overflow: hidden;
   color: #fff;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 18px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 20px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
   white-space: nowrap;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 
 .delivery-marquee-track {
@@ -597,111 +600,150 @@ a {
 
 @media (min-width: 1200px) {
   .hero-copy {
-    width: min(61%, 760px);
+    width: min(61%, 790px);
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 680px) {
+  .hero-section {
+    display: grid;
+    min-height: 100vh;
+    min-height: 100svh;
+    height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'header'
+      'copy'
+      'features'
+      'product'
+      'cta';
+    align-content: start;
+    padding: 22px 5vw 38px;
+  }
+
   .hero-header {
-    top: 19px;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    grid-area: header;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 24px;
   }
 
   .hero-copy {
-    top: clamp(88px, 28vh, 215px);
-    width: 70%;
+    position: relative;
+    top: auto;
+    left: auto;
+    grid-area: copy;
+    width: 100%;
+    margin-bottom: 26px;
   }
 
   .hero-copy h1 {
-    font-size: clamp(34px, 5.2vw, 46px);
-  }
-
-  .hero-product {
-    right: 11.2%;
-    bottom: clamp(84px, 24vh, 145px);
-    width: clamp(54px, 10.8vw, 78px);
-  }
-
-  .feature-tiles {
-    bottom: 12px;
-    gap: clamp(12px, 3.6vw, 22px);
-  }
-
-  .feature-tile {
-    width: clamp(60px, 13vw, 88px);
-    height: clamp(66px, 13.2vw, 96px);
-  }
-
-  .hero-cta-cluster {
-    right: 4%;
-    bottom: 3.6%;
-    width: clamp(110px, 22vw, 130px);
-  }
-
-  .delivery-marquee {
-    font-size: 9px;
-  }
-
-  .promo-tile {
-    padding: 0 8px;
-    font-size: 12px;
-  }
-
-}
-
-@media (max-width: 420px) {
-  .hero-copy {
-    width: 68%;
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(30px, 8vw, 34px);
+    font-size: clamp(40px, 10.5vw, 54px);
   }
 
   .hero-copy p {
-    margin-top: 11px;
-    font-size: 13px;
-  }
-
-  .hero-product {
-    right: 11.2%;
-    bottom: clamp(84px, 24vh, 145px);
-    width: 54px;
+    max-width: 440px;
+    margin-top: 14px;
+    font-size: 15px;
   }
 
   .feature-tiles {
-    left: 3.8%;
-    gap: clamp(7px, 2vw, 10px);
+    position: relative;
+    bottom: auto;
+    left: auto;
+    grid-area: features;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 17px;
+    margin-bottom: 24px;
   }
 
   .feature-tile {
-    width: clamp(43px, 12vw, 50px);
-    height: 66px;
-    padding-right: 3px;
-    padding-left: 3px;
+    width: 90%;
+    max-width: 520px;
+    min-height: 112px;
+    padding: 25px 22px 17px;
+    border-radius: 18px;
   }
 
   .feature-title {
-    font-size: 6.5px;
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.18;
   }
 
   .feature-description {
-    font-size: 4.8px;
+    max-width: 100%;
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  .hero-product {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    grid-area: product;
+    justify-self: center;
+    width: clamp(96px, 28vw, 132px);
+    margin: 4px auto 20px;
   }
 
   .hero-cta-cluster {
-    right: 4%;
-    bottom: 3.6%;
-    width: clamp(100px, 28vw, 112px);
+    position: relative;
+    right: auto;
+    bottom: auto;
+    grid-area: cta;
+    justify-self: center;
+    width: min(280px, 90%);
+    margin-bottom: 4px;
+    gap: 11px;
   }
 
   .promo-tile {
-    min-height: 42px;
-    padding: 0 5px;
-    font-size: 10px;
+    min-height: 54px;
+    padding: 0 16px;
+    font-size: 15px;
   }
 
   .delivery-marquee {
-    font-size: 9px;
+    height: 21px;
+    font-size: 12px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(38px, 10.5vw, 44px);
+  }
+
+  .hero-copy p {
+    font-size: 14px;
+  }
+
+  .feature-tile {
+    width: 92%;
+    min-height: 112px;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .feature-title {
+    font-size: 14px;
+  }
+
+  .feature-description {
+    font-size: 12px;
   }
 
   .checkout-popup {
